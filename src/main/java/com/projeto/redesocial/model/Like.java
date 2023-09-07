@@ -1,4 +1,4 @@
-package com.projeto.redesocial.entity;
+package com.projeto.redesocial.model;
 
 import java.util.Date;
 
@@ -22,15 +22,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "comments", schema = "redesocial")
-public class Comment {
+@Table(name = "likes", schema = "redesocial")
+public class Like {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "comments_sq")
-    @SequenceGenerator(schema = "redesocial", name = "comments_sq", sequenceName = "comments_sq", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "likes_sq")
+    @SequenceGenerator(schema = "redesocial", name = "likes_sq", sequenceName = "likes_sq", initialValue = 1, allocationSize = 1)
     private Long id;
-
-    private String comment;
 
     @CreationTimestamp
     @Column(name = "created_at")
