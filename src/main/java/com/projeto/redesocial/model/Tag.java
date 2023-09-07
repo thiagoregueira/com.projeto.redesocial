@@ -1,4 +1,4 @@
-package com.projeto.redesocial.entity;
+package com.projeto.redesocial.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,17 +16,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "followers", schema = "redesocial")
-public class Follower {
+@Table(name = "tags", schema = "redesocial")
+public class Tag {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "followers_sq")
-    @SequenceGenerator(schema = "redesocial", name = "followers_sq", sequenceName = "followers_sq", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tags_sq")
+    @SequenceGenerator(schema = "redesocial", name = "tags_sq", sequenceName = "tags_sq", initialValue = 1, allocationSize = 1)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "followers_id")
-    private User follower;
+    @JoinColumn(name = "posts_id")
+    private Post post;
 
     @ManyToOne
     @JoinColumn(name = "users_id")

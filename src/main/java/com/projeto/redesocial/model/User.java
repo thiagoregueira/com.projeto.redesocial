@@ -1,4 +1,4 @@
-package com.projeto.redesocial.entity;
+package com.projeto.redesocial.model;
 
 import java.util.Date;
 
