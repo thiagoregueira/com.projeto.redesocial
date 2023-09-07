@@ -20,7 +20,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @Operation(summary = "Save nwe user", tags = "User")
+    @Operation(summary = "Save new user", tags = "User")
     @PostMapping
     public ResponseEntity<User> save(@RequestBody User user) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(user));
